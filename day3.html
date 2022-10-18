@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Questions</title>
+</head>
+<body>
+    <h1>DAY 3</h1>
+
+    <h3>1. What is the use of setTimeout.</h3>
+    <pre>The setTimeout() method executes a block of code after the specified time. The method executes the code only once.</pre>
+    <script>
+        setTimeout(function () {
+            console.log("Good morning");
+          }, 2000);
+    </script>
+
+    <h3>2. What is an event loop and call stack.</h3>
+    <pre>
+    <b>Event Loop :</b>The event loop is a constantly running process that monitors both the callback queue and the call stack.
+    <b>Callstack :</b>A call stack is a mechanism for an interpreter to keep track of its place in a script that calls multiple functions.
+    </pre>
+
+    <h3>3. What are arrow functions?</h3>
+    <pre>
+    Arrow function is one of the features introduced in the ES6 version of JavaScript. 
+    It allows you to create functions in a cleaner way compared to regular functions. 
+    </pre>
+    <script>
+        let greet = () => console.log('Hello');
+        greet(); 
+    </script>
+    
+    <h3>4. What is a Temporal Dead Zone?</h3>
+    <pre>
+    A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+    </pre>
+
+    <h3>5. what is hoisting?</h3>
+    <pre>
+         Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+         Hoisting allows functions to be safely used in code before they are declared.
+    </pre>
+
+    <h3>6. What is the DOM?</h3>
+    <pre>
+         The Document Object Model (DOM) is a programming interface for web documents. 
+         It represents the page so that programs can change the document structure, style, and content. 
+         The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+    </pre>
+ 
+    <h3>7. Difference between undefined vs not defined vs NaN</h3>
+    <pre>
+    Undefined: Undefined is a datatype in JS which means a variable is declared but its value is not specified. It is also the default value of a variable declared using 'var' upon hoisting.</p>
+    Not defined: Not defined is shown on the console when a variable is used for something but it was never declared.</p>
+    NAn: NAN stands for 'not a number' which is the value given to a number if it contains alphabets or any special character.
+    </pre>
+    
+    
+</body>
+</html>
