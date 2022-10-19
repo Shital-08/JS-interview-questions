@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Questions</title>
+</head>
+<body>
+<h1>DAY 5</h1>
+
+<h3>1. What is the for-in loop in JavaScript? Give its syntax.</h3>
+<pre>
+The for..in loop in JavaScript allows you to iterate over all property keys of an object.
+In each iteration of the loop, a key is assigned to the key variable. The loop continues for all object properties.
+The syntax of the for...in loop is:
+
+for (key in object) {
+    // body of for...in
+}
+</pre>
+<script>
+let string = 'code';
+for (let i in string) {
+    console.log(string[i]);
+}
+</script>
+
+<h3>2. Explain Local Scope, Block Scope, Functional Scope and Scope Chain in javascript.</h3>
+<pre>
+Local scope: Variables declared inside a function become local to the function. 
+Local variables are created when a function starts and deleted when the function is executed. 
+Local variables have Function Scope which means that they can only be accessed from within the function.
+
+Block Scope: let and const are the two new important keywords that were introduced by the ES6 and these two keywords provide Block Scope in JavaScript.
+Variables that are declared inside a { } block cannot be accessed from outside the block.
+
+Functional Scope: JavaScript has function scope and each function creates a new scope. 
+Variables defined inside a function are not accessible from outside the function and variables declared with var, let and const are quite similar when declared inside a function.
+
+Scope Chain: JavaScript engine uses scopes to find out the exact location or accessibility of variables and that particular process is known as Scope Chain.
+Scope Chain means that one variable has a scope (it may be global or local/function or block scope) is used by another variable or function having another scope (may be global or local/function or block scope).
+</pre>
+
+<h3>3. What is difference between null and undefined and where to use what?</h3>
+<pre>
+                Undefined	                                             NULL
+    1.The undefined property indicates that               1. The value null represents the
+     a variable has not been declared at all.             absence of any object value
+
+    2.Its supported browsers are -:                       2. Its supported browsers are -:
+      Chrome, Microsoft Edge ,                            Chrome, Microsoft Edge ,  
+      Internet Explorer , Firefox ,                       Internet Explorer , Firefox ,
+      Safari , Opera Mini.                                Safari , Opera Mini.                      
+    
+    3.Null is converted to zero (0) while                3. Undefined is converted to NaN while 
+     performing primitive operations.                       performing primitive operations.
+                                       
+    4.The null value is a primitive value                4. The undefined value is a primitive value, 
+      which represents the null, empty,                     which is used when a variable has 
+      or non-existent reference.                            not been assigned a value.  
+</pre>  
+
+ <h3>4. what is Symbol?</h3>
+ <pre>
+The JavaScript ES6 introduced a new primitive data type called Symbol. 
+Symbols are immutable (cannot be changed) and are unique. 
+ </pre>
+ <script>
+let x = Symbol('hey');
+console.log(x);
+ </script>
+
+ <h3>5. Write code to explain map and filter in arrays.</h3>
+ <pre>
+ map() :The map() method is used for creating a new array from an existing one, applying a function to each one of the elements of the first array.
+ </pre>
+ <script>
+var numbers = [1, 2, 3, 4];
+var doubled = numbers.map(item => item * 2);
+console.log(doubled);
+</script>
+
+<pre>
+filter():The filter() method takes each element in an array and it applies a conditional statement against it. If this conditional returns true, the element gets pushed to the output array. 
+If the condition returns false, the element does not get pushed to the output array.
+</pre>
+<script>
+var numbers = [1, 2, 3, 4];
+var evens = numbers.filter(item => item % 2 === 0);
+console.log(evens);
+</script>
+
+<h3>6. Explain passed by value and passed by reference.</h3>
+<pre>
+Pass by Value: The method parameter values are copied to another variable and then the copied object is passed, 
+that’s why it’s called pass by value.
+</pre>
+<script>
+let a = 30;
+let b = a ;
+b = a + 20;
+console.log(a);
+console.log(b);
+</script>
+
+<pre>
+Pass by Reference: An alias or reference to the actual parameter is passed to the method, 
+that’s why it’s called pass by reference.
+</pre>
+<script>
+ let obj1 ={
+ name :"Anvi",
+ age : 20,
+ }
+ let obj2 = obj1;
+ obj2.age = 24;
+ console.log(obj1);
+ console.log(obj2);
+</script>
+
+<h3>7. explain Self Invoking Function and its code.</h3>
+<pre>
+ A self-invoking (also called self-executing) function is a nameless (anonymous) function that is invoked immediately after its definition.
+ Self-invoking functions are useful for initialization tasks and for one-time code executions, without the need of creating global variables.
+ </pre>
+ <script>
+(function(x){
+console.log(x);
+})("Hello, World!");
+ </script>
+</body>
+</html>

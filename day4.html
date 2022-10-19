@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Questions</title>
+</head>
+<body>
+<h1>DAY 4</h1>
+
+<h3>1. How many operators do we have in JS ?</h3>
+<pre>
+An operator is used for manipulating a certain value or operand. 
+Operators are used to perform specific mathematical and logical computations on operands.
+Types of JavaScript Operators
+1. Arithmetic Operators
+2. Comparison Operators
+3. Bitwise Operators
+4. Logical Operators
+5. Assignment Operators
+</pre>
+ 
+<h3>2. What are pure functions?</h3>
+<pre>
+A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. 
+It does not depend on any state or data change during a program’s execution. Rather, it only depends on its input arguments.
+Also a pure function does not produce any observable side effects such as network requests or data mutation etc.
+</pre>
+<script>
+function operationAdd(a, b){
+    return a+b;
+}
+console.log(        
+  operationAdd(2,5),)
+
+</script>
+
+<h3>3. What is callback hell.</h3>
+<pre>
+Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure.  
+Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
+</pre>
+<script>
+function print(){
+                    setTimeout(() => {
+                        console.log(3)
+                        setTimeout(() => {
+                            console.log(2)
+                            setTimeout(() => {
+                                console.log(1)
+                            }, 1000);
+                        }, 2000);
+                    }, 3000);
+        }
+        print()
+</script>
+
+<h3>4. What are promises and why do we need them?</h3>
+<pre>
+Promises are used to handle asynchronous operations in JavaScript. 
+They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code. 
+</pre>
+<script>
+let count = true;
+let countValue = new Promise(function (resolve, reject) {
+    if (count) {
+        resolve("There is a count value.");
+    } else {
+        reject("There is no count value");
+    }
+});
+console.log(countValue);
+</script>
+
+<h3>5. What is promise chaining.</h3>
+<pre>
+Promises are useful when you have to handle more than one asynchronous task, one after another. For that, we use promise chaining.
+You can perform an operation after a promise is resolved using methods then(), catch() and finally().
+</pre>
+<script>
+let p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(10);
+    }, 3 * 100);
+});
+
+p.then((result) => {
+    console.log(result);
+    return result * 2;
+}).then((result) => {
+    console.log(result);
+    return result * 3;
+});
+</script>
+
+<h3>6. Give an example of async/await.</h3>
+<pre>
+An async function is a function declared with the async keyword, and the await keyword is permitted within it. 
+The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chain.
+“async” before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
+The keyword await makes JavaScript wait until that promise settles and returns its result.
+</pre>
+<script>
+async function f() {
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("done!"), 1000)
+});
+
+let result = await promise; 
+
+alert(result); 
+}
+
+f();
+</script> 
+ 
+<h3>7. What is the purpose of async/await keywords?</h3>
+<pre>
+The purpose of async/await is to simplify the syntax necessary to consume promise-based APIs. 
+The behavior of async/await is similar to combining generators and promises.
+</pre>
+</body>
+</html>
