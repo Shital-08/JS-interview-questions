@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Interview Questions</title>
+</head>
+<body>
+<h1>DAY 6</h1>
+
+<h3>1. Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button.</h3>
+ <h1 id="h1">MERN stack</h1>
+ <button id="btn" onclick="myfunc()">click</button>
+ 
+ <script>
+    document.getElementById("h1").innerHTML = "";
+    function myfunc(){
+        document.getElementById("h1").innerHTML = "MERN stack"
+    }
+</script>
+
+<h3>2. Write code to get 1st H1 element from a webpage using DOM.</h3>
+<h1>Hello</h1>
+<h1>World</h1>
+<script>
+var h1s = document.getElementsByTagName('h1');
+console.log(h1s[0].innerHTML);
+console.log(h1s[1].innerHTML);
+</script>
+
+<h3>3. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second.</h3>
+<div class="clock">
+    <span id="HH"></span>:     
+    <span id="MM"></span>:     
+    <span id="SS"></span>
+</div>
+<script>
+function getTime(){
+    let date = new Date();
+    let HH = date.getHours();
+    let MM = date.getMinutes();
+    let SS = date.getSeconds();
+    document.getElementById("HH").innerText = HH;
+    document.getElementById("MM").innerText = MM;
+    document.getElementById("SS").innerText = SS;
+    setTimeout(getTime, 1000);
+}
+getTime();
+</script>
+
+<h3>4. Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy".</h3>
+<h2 id="h2">Hello World</h2>
+<button onclick="Replace()">Replace text</button>
+<script>
+function Replace(){
+document.getElementById("h2").innerText = "Welcome to Elevation Academy"
+}
+</script>
+
+<h3>5. Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text.</h3>
+<h2 id="h3">Hello World</h2>
+<button onclick="Hide()">Hide text</button>
+<script>
+function Hide(){
+document.getElementById("h3").style.visibility="hidden"
+}
+</script>
+
+<h3>6. Given an array of 0's and 1's find out number of 0's.</h3>
+<script>
+let arr = [0,1,0,1,0,1,1,0,0]
+let count=0;
+for(let item of arr){
+    if(item===0){
+        count++;
+    }
+}
+console.log(count)
+</script>
+
+<h3>7. Given an array find out total no. of odd and even nos.</h3>
+<script>
+let arr1 = [1,2,3]
+
+let odd=0;
+let even = 0;
+
+for(let i=0;i<arr1.length;i++){
+    if(arr1[i]%2 == 1){
+        odd++
+        
+    }
+    else{
+        even++
+    }
+}
+console.log("Total number of odd is " + odd)
+console.log("Total number of even is " + even)
+</script>
+
+<h3>8. Given a string find out number of vowels.</h3>
+<script>
+let str = "abctfxhjxgiut";
+let str2 = str.toLowerCase();
+let countVowel = 0;
+for(let i of str2){
+    if(i == 'a'){
+        countVowel++;
+    }
+    else if(i == 'e'){
+        countVowel++
+    }
+    else if(i == 'i'){
+        countVowel++
+    }
+    else if(i == 'o'){
+        countVowel++
+    }
+    else if(i == 'u'){
+        countVowel++
+    }
+};
+console.log("The no. of vowels are " + countVowel);
+</script>
+
+<h3>9. Write a code to create two objects with 2 properties each, one will be string and other will be an array. Create a function to check if all the elements of the arrays in both the objects are same.</h3>
+<script>
+let data1 ={
+    name :"vrushali",
+    subjects :["science","math","hindi"]
+}
+let data2 ={
+    name :"Akanksha",
+    subjects :["science","math","hindi"]
+}
+
+function func(arr1,arr2){
+    if(arr1.length==arr2.length){
+        let result = false;
+        for(let i=0;i<arr1.length;i++) {
+            if(arr1[i]==arr2[i])
+            result = true;
+            else
+            return false
+        }
+        return result;
+    }
+    else 
+    return false;
+}
+
+let result = func(data1.subjects,data2.subjects);
+if(result){
+    console.log("Arrays are same")
+}
+else {
+    console.log("Arrays are different")
+}
+</script>
+</body>
+</html>
